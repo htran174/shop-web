@@ -1,0 +1,39 @@
+<!-- Sticky, auto-hide header (fades out on scroll down, in on scroll up) -->
+<header
+  x-data="{
+    hidden:false, lastY:0,
+    handle(){
+      const y = window.scrollY || 0;
+      const goingDown = y > this.lastY && y > 10;
+      this.hidden = goingDown;
+      this.lastY = y;
+    }
+  }"
+  x-init="
+    // show when mouse moves near top (helps if user scrolls down)
+    window.addEventListener('scroll', () => handle(), { passive:true });
+    window.addEventListener('mousemove', e => { if(e.clientY < 40) hidden=false; });
+  "
+  :class="hidden ? 'opacity-0 -translate-y-2 pointer-events-none' : 'opacity-100 translate-y-0'"
+  class="fixed top-0 inset-x-0 z-50 transition-all duration-300
+         bg-[color:var(--color-card-bg)]/85 backdrop-blur
+         border-b border-[color:var(--color-border)]"
+>
+  <div class="mx-auto max-w-6xl px-6 md:px-10 py-4 flex items-center justify-between">
+    <a href="/index.html" class="text-2xl tracking-wide hover:opacity-80"
+       style="font-family:'Cormorant Garamond', serif;">
+      <span style="color:var(--gold)">Diva</span> Nails
+    </a>
+
+    <nav class="hidden md:flex gap-6" style="color:var(--gold)">
+      <a href="/index.html" class="hover:opacity-80">Home</a>
+      <a href="/services.html" class="hover:opacity-80">Services</a>
+      <a href="/gallery.html" class="hover:opacity-80">Gallery</a>
+      <a href="/contact.html" class="hover:opacity-80">Contact</a>
+      <a href="/booking.html" class="hover:opacity-80 pulse-rare" data-booking>Book</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Spacer so content isn’t hidden behind the fixed header -->
+<div class="h-16"></div>

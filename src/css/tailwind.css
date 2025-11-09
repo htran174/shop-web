@@ -2,56 +2,179 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base from semantic tokens */
+/* ----- GLOBAL ----- */
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+
 @layer base {
-  :root { --radius: 6px; } /* fallback */
+  :root { --radius: 6px; }
+
+  /* Theme tokens are provided by /assets/themes/dark.css */
   html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
   body { background: var(--color-page-bg); color: var(--color-body); }
-  h1,h2,h3,h4 { font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif; color: var(--color-title); }
+
+  /* Universal section spacing */
+  section { padding-top: 4rem; padding-bottom: 4rem; }
+  @media (min-width: 768px) {
+    section { padding-top: 6rem; padding-bottom: 6rem; }
+  }
+
+  h1,h2,h3,h4 {
+    font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    color: var(--color-title);
+  }
+
   a { color: var(--color-link); }
 }
 
-/* Components built on tokens */
 @layer components {
-  .card { background: var(--color-card-bg); border:1px solid var(--color-border); border-radius: var(--radius); }
-
-  .btn { @apply inline-flex items-center justify-center px-5 py-3 transition;
-         border:1px solid var(--color-border); border-radius: var(--radius); }
-
-  .btn-gold    { background: var(--color-cta-bg);    color: var(--color-cta-fg); }
-  .btn-white   { background: var(--color-cta-alt-bg); color: var(--color-cta-alt-fg); }
-  .btn-outline { background: transparent; color: var(--color-body); }
+  /* Small, consistent button */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+  .btn-gold {
+    background: var(--color-cta-bg);
+    color: var(--color-cta-fg);
+    filter: none;
+  }
+  .btn-gold:hover { filter: brightness(0.95); }
+  .btn-gold:active { transform: translateY(1px); }
 
   .muted { color: var(--color-muted); }
+
+  /* Anchor offset even when browsers ignore scroll-padding */
+  .anchor-offset { scroll-margin-top: 6.5rem; }
+
+  /* Space between large sections */
+  section + section { margin-top: 4rem; }
+  @media (min-width: 768px) { section + section { margin-top: 6rem; } }
 }
 
-/* Motion */
-@media (prefers-reduced-motion: no-preference) {
-  .reveal-init { opacity:0; transform: translateY(8px); }
-  .reveal-in   { opacity:1; transform:none; transition: opacity .4s ease, transform .4s ease; }
-}
-@keyframes mildPulse { 0%,97%,100%{transform:none} 98.5%{transform:translateY(-2px)} }
-.pulse-rare { animation: mildPulse 15s infinite; }
-
+/* ----- SERVICES BAND (Warm Boutique Luxury) ----- */
 @layer components {
-  /* Footer scope */
-  .footer { color: #d8d8d8; background-color: #111; }
+  .services-band {
+    position: relative;
+    background: linear-gradient(145deg, #111010 0%, #171515 100%);
+    color: var(--services-text);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .services-band::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 1px;
+    background: var(--services-gold-soft);
+    opacity: .35;
+    pointer-events: none;
+  }
+  @media (max-width: 768px) {
+    .services-band { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  }
 
-  /* Make footer links neutral (override theme's gold) */
+  .services-heading {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    font-size: 1.375rem;
+    text-align: center;
+  }
+  .services-heading::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 1px;
+    margin: 0.75rem auto 0;
+    background: var(--services-gold-soft);
+    opacity: 0.5;
+  }
+
+  .service-card {
+    position: relative;               /* enables stretched link */
+    background: var(--services-card-bg);
+    border-radius: 6px;
+    padding: 1.75rem;
+    box-shadow: var(--services-shadow);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .service-card:hover {
+    background: #1e1c1c;
+    transform: translateY(-3px);
+  }
+
+  /* Invisible full-card link */
+  .stretched-link {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .service-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+  .service-title::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 1px;
+    background: var(--services-gold-soft);
+    opacity: 0.4;
+    margin-top: 0.25rem;
+    transition: width 0.12s ease;
+  }
+  .service-card:hover .service-title::after { width: 64px; }
+
+  .service-desc {
+    color: var(--services-muted);
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .btn-service {
+    position: relative;     /* keep above stretched link */
+    z-index: 1;
+    background: var(--services-gold-soft);
+    color: #0B0B0C;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    padding: 0.45rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .btn-service:hover {
+    box-shadow: 0 2px 10px rgba(205,187,122,0.18);
+    transform: translateY(-1px);
+  }
+
+  .full-bleed {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: 100vw;
+  }
+}
+
+/* ----- FOOTER (smaller, calmer, lighter background) ----- */
+@layer components {
+  .footer { color: #d8d8d8; background-color: #111; }
   .footer a { color: #d8d8d8 !important; }
   .footer a:hover { color: #ffffff !important; }
 
-  /* Sizes & rhythm (smaller, calmer) */
   .footer .brand-line { font-size: 0.95rem; line-height: 1.6; }
   .footer .hours-line { font-size: 0.85rem; line-height: 1.6; color: rgba(255,255,255,.7); }
-  .footer .legal-line { font-size: 0.8rem; line-height: 1.4; color: rgba(255,255,255,.5); }
+  .footer .legal-line { font-size: 0.8rem; line-height: 1.2; color: rgba(255,255,255,.5); }
 
-  /* Socials: subtle by default, brighter on hover */
   .footer .social-link { @apply inline-flex items-center gap-2 transition; color: rgba(255,255,255,.65); }
   .footer .social-link:hover { color: rgba(255,255,255,.9); }
   .footer .social-icon { width: 18px; height: 18px; opacity: .7; transition: opacity .25s ease; }
   .footer .social-link:hover .social-icon { opacity: 1; }
 }
-
-
-

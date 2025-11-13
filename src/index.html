@@ -72,20 +72,20 @@
     </template>
   </div>
 
-  <!-- Alpine logic -->
+  <!-- Slider -->
   <script>
     function heroSlider() {
       return {
         // images (use your placeholders; change or add easily)
         slides: [
-          { src: '/assets/images/homepagenail.jpg', alt: 'Salon nails — 1' },
-          { src: '/assets/images/IMG_0022.jpg',      alt: 'Salon nails — 2' },
-          { src: '/assets/images/IMG_0063.jpg',      alt: 'Salon nails — 3' },
-          { src: '/assets/images/IMG_0452.jpg',      alt: 'Salon nails — 4' },
-          { src: '/assets/images/IMG_9564.jpg',      alt: 'Salon nails — 5' },
+          { src: '/assets/images/img1.jpg',      alt: 'Salon nails — 1' },
+          { src: '/assets/images/img2.jpg',      alt: 'Salon nails — 2' },
+          { src: '/assets/images/img3.jpg',      alt: 'Salon nails — 3' },
+          { src: '/assets/images/img4.jpg',      alt: 'Salon nails — 4' },
+          { src: '/assets/images/img5.jpg',      alt: 'Salon nails — 5' },
         ],
         current: 0,
-        intervalMs: 6000,       // ~6s per slide (luxury pace)
+        intervalMs: 8000,       // ~6s per slide (luxury pace)
         _timer: null,
         init() {
           // Respect prefers-reduced-motion: disable auto-advance
@@ -123,7 +123,7 @@
  <section class="services-band anchor-offset full-bleed mt-12 md:mt-16" data-reveal>
   <h2 class="services-heading">Our Services</h2>
   <div id="services" class="anchor-hit"></div>
-  <div class="mt-10 grid gap-8 md:grid-cols-3 max-w-6xl mx-auto px-6 md:px-10">
+  <div class="mt-10 grid gap-8 md:grid-cols-4 max-w-6xl mx-auto px-6 md:px-10">
     <!-- Acrylic -->
     <div class="service-card" data-reveal data-reveal-delay="150">
       <a class="stretched-link" href="/handnail.html#hand-acrylic" aria-label="Open Acrylic menu"></a>
@@ -147,7 +147,15 @@
       <p class="service-desc">Unhurried care. Sanitized tools.</p>
       <a href="/pedicure.html" class="btn btn-gold">View menu</a>
     </div>
+     <!-- Wax -->
+    <div class="service-card" data-reveal data-reveal-delay="150">
+      <a class="stretched-link" href="/wax.html" aria-label="Open Acrylic menu"></a>
+      <h3 class="service-title">Wax</h3>
+      <p class="service-desc">Smoth service.</p>
+      <a href="/wax.html" class="btn btn-gold">View menu</a>
+    </div>
   </div>
+
 </section>
 
 

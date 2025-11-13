@@ -8,8 +8,7 @@ export const HANDNAIL_MENU = [
     isActive: true,
     sortGroup: "gel",
     addons: [
-      { name: "French Tip (White or Color)", price: "+$10" },
-      { name: "Designs / Diamonds", price: "+$5 & up" },
+      { name: "Designs" , price: "+$5 & up" },
       { name: "Gel Removal (No Service)", price: "+$10" }
     ]
   },
@@ -22,7 +21,9 @@ export const HANDNAIL_MENU = [
     sortGroup: "gel",
     addons: [
       { name: "French Tip (White or Color)", price: "+$10" },
-      { name: "Designs / Diamonds", price: "+$5 & up" }
+      { name: "Designs / Diamonds", price: "+$5 & up" },
+      { name: "Extra Length (M / L / XL)", price: "+$5 & up" }
+
     ]
   },
 
@@ -36,8 +37,8 @@ export const HANDNAIL_MENU = [
     sortGroup: "acrylic",
     addons: [
       { name: "Shape Change (Coffin, Almond, Stiletto)", price: "+$5" },
-      { name: "Repairs (per nail)", price: "+$5" },
       { name: "French Tip (White or Color)", price: "+$10" },
+      { name: "Repairs", price: "+$5 & up" },
       { name: "Designs / Diamonds", price: "+$5 & up" }
     ]
   },

@@ -38,6 +38,30 @@ html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
     color: var(--color-cta-fg);
     filter: none;
   }
+  .btn-outline-gold {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm 
+          font-medium transition border;
+    border: 1px solid var(--gold);
+    color: var(--color-title);
+    background: transparent;
+  }
+  .btn-outline-gold:hover {
+    background: rgba(212, 180, 122, 0.12); /* soft gold tint */
+  }
+
+  /* OPTION B — Frosted Glass Button */
+  .btn-glass {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm 
+          font-medium transition border backdrop-blur-md;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: var(--color-title);
+  }
+  .btn-glass:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--gold);
+  }
+
   .btn-gold:hover { filter: brightness(0.95); }
   .btn-gold:active { transform: translateY(1px); }
 

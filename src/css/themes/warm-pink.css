@@ -1,0 +1,72 @@
+:root{
+  /* =============================
+     WARM DEEP PINK + ROSE GOLD
+     ============================= */
+
+  /* Core palette */
+  --bg: #B86A78;           /* main page background – warm deep pink */
+  --surface: #F6ECEA;      /* cards / hero content surface – light blush */
+  --white: #FEF8F6;        /* soft off-white for text if needed */
+  --muted: #E3C7C9;        /* muted light pink for secondary text */
+
+  /* Rose gold accent (reusing gold tokens) */
+  --gold: #D8B4A0;         /* main rose gold accent */
+  --lightgold: #E6C8B4;    /* lighter rose gold (hover, lines) */
+
+  --radius: 6px;
+
+  /* Semantic roles */
+  --color-page-bg: var(--bg);
+  --color-card-bg: var(--bg);
+
+  --color-title: #FDF4F3;      /* big headings – very light */
+  --color-body: #F7E4E3;       /* normal text on pink background */
+  --color-muted: var(--muted);
+
+  --color-link: var(--gold);
+  --color-border: rgba(0,0,0,0.12);
+
+  /* Buttons */
+  --color-cta-bg: var(--gold);      /* primary button = rose gold */
+  --color-cta-fg: #5B2D32;          /* dark pink text on button */
+
+  --color-cta-alt-bg: rgba(0,0,0,0.08); /* subtle dark overlay for alt button */
+  --color-cta-alt-fg: #FDF4F3;
+
+  /* Our Services section
+     (slightly darker band with lighter cards so it stands out) */
+  --services-band-bg: #A56372;       /* darker warm pink strip */
+  --services-card-bg: #C6989F;      /* light blush cards */
+  --services-gold-soft: var(--gold);
+  --services-text: #5B2D32;         /* card titles – dark plum-pink */
+  --services-muted: #8B5A61;        /* card body – muted warm pink-brown */
+  --services-shadow: 0 4px 16px rgba(0,0,0,0.20);
+
+  --text: var(--color-body);
+  --services-text-strong: #4B2227;
+}
+
+/* ---- Our Services band ---- */
+
+.services-band {
+  background: var(--services-band-bg) !important;
+  color: var(--services-muted);
+}
+
+/* Heading inside services band */
+.services-band .services-heading {
+  color: var(--lightgold) !important;   /* rose-gold heading */
+}
+
+/* Underline below "Our Services" */
+.services-band .services-heading::after {
+  background: var(--gold);
+}
+
+/* Optional helpers for SVG accents (flowers / trees) */
+.svg-accent-fill {
+  fill: var(--gold);
+}
+.svg-accent-stroke {
+  stroke: var(--gold);
+}

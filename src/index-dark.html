@@ -12,6 +12,51 @@
   <!-- Alpine + site JS -->
   <script src="/assets/alpine.min.js" defer onload="window.Alpine.start()"></script>
   <script type="module" defer src="/assets/js/main.js"></script>
+
+  <style>
+    /* Snowflake background layer */
+    .services-snow {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+
+      background-image: url('/assets/images/frames/snowflakes-background.png');
+
+      background-size: 650px;         /* HUGE tile = fewer flakes visible */
+      background-repeat: repeat;
+      background-position: center top;
+
+      filter:
+        brightness(0)
+        invert(1)
+        sepia(1)
+        saturate(650%)
+        hue-rotate(10deg)
+        brightness(1.05);
+
+      opacity: 0.30;                  /* subtle gold */
+      pointer-events: none;
+    }
+
+
+
+    /* Ensure the section forms a stacking context & clips the snow */
+    .services-band {
+      position: relative;    /* keeps the existing gradient from app.css */
+      overflow: hidden;
+    }
+
+    /* Keep real content above the snow layer */
+    .services-band > :not(.services-snow) {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+
+
+
+
+
 </head>
 <body class="min-h-screen">
 
@@ -126,9 +171,11 @@
 <!-- Black spacer between hero and services -->
 <div class="bg-black h-12 md:h-20 w-full relative z-[5]"></div>
 
-
   <!-- Services highlight -->
  <section class="services-band anchor-offset full-bleed mt-12 md:mt-16" data-reveal>
+  <!-- SNOWFLAKE BACKGROUND LAYER -->
+  <div class="services-snow"></div>
+
   <h2 class="services-heading">Our Services</h2>
   <div id="services" class="anchor-hit"></div>
   <div class="mt-10 grid gap-8 md:grid-cols-4 max-w-6xl mx-auto px-6 md:px-10">

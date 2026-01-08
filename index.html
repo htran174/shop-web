@@ -12,7 +12,8 @@
 
 <body class="min-h-screen bg-[var(--color-page-bg)] text-[var(--color-body)] flex flex-col">
 
-  <main class="max-w-4xl mx-auto px-6 py-10 md:py-16 flex-grow">
+  <!-- Overall padding tightened -->
+  <main class="max-w-4xl mx-auto px-6 pt-6 pb-4 md:pt-8 md:pb-6 flex-grow">
 
     <!-- Top intro -->
     <header class="space-y-3">
@@ -21,108 +22,147 @@
       </p>
 
       <h1 class="text-4xl md:text-5xl font-semibold text-[var(--color-title)] leading-tight">
-        Choose Your Style
+        Build a Website That Fits Your Business
       </h1>
 
       <p class="text-base md:text-lg max-w-2xl text-[var(--color-body)]">
-        Find a style that fits your business!
+        Affordable custom websites for local businesses.
       </p>
     </header>
 
-    <!-- How this works + Dev info -->
-    <section class="mt-6 grid gap-5 md:grid-cols-2 items-start">
+    <!-- How this works -->
+    <section
+      class="mt-4 space-y-2"
+      style="padding-top: 0; padding-bottom: 0.75rem;"
+    >
+      <h2 class="text-sm font-semibold tracking-[0.16em] uppercase text-[var(--color-muted)]">
+        How this works
+      </h2>
+      <ol class="text-sm space-y-1 text-[var(--color-body)]">
+        <li><span class="font-semibold">1.</span> Take a look at the styles below to get inspired.</li>
+        <li><span class="font-semibold">2.</span> Choose a style you like — or mix elements from multiple ones.</li>
+        <li><span class="font-semibold">3.</span> Tell me your preferences, and I’ll design a polished, modern website tailored for your business.</li>
+        <li><span class="font-semibold">4.</span> If you want something different, I can create a fully custom style as well.</li>
+      </ol>
+    </section>
 
-      <!-- How this works -->
-      <div class="space-y-2.5">
-        <h2 class="text-sm font-semibold tracking-[0.16em] uppercase text-[var(--color-muted)]">
-          How this works
-        </h2>
-        <ol class="text-sm space-y-1.5 text-[var(--color-body)]">
-          <li><span class="font-semibold">1.</span> Take a look at the styles below to get inspired.</li>
+   <!-- Theme options -->
+<section
+  class="mt-3 grid gap-4 md:grid-cols-3"
+  style="padding-top: 0; padding-bottom: 0.75rem;"
+>
 
-          <li><span class="font-semibold">2.</span> Choose a style you like — or mix elements from multiple ones.</li>
+  <!-- Light Theme -->
+  <a href="/index-light.html"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="block rounded-xl border border-[var(--color-border)] bg-[var(--color-card-bg)]
+            p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-200">
 
-          <li><span class="font-semibold">3.</span> Tell me your preferences, and I’ll design a polished, modern website tailored for your business.</li>
-        </ol>
-      </div>
+    <h2 class="text-sm font-semibold tracking-[0.16em] uppercase text-[var(--color-muted)]">
+      Light Theme
+    </h2>
 
-      <!-- Developer info card -->
-      <aside class="rounded-xl border border-[var(--color-border)] bg-[var(--color-card-bg)] p-4 md:p-5 text-sm shadow-sm">
-        <h2 class="text-xs font-semibold tracking-[0.2em] uppercase text-[var(--color-muted)] mb-2.5">
+    <p class="mt-2 text-xl font-semibold text-[var(--color-title)]">
+      Elegant Light Theme
+    </p>
+
+    <p class="mt-2 text-sm text-[var(--color-muted)] leading-relaxed">
+      Bright, airy layout with a warm cream background and soft gold accents.
+      Clean, welcoming, and easy to read for most guests.
+    </p>
+
+    <p class="mt-3 text-xs font-medium text-[var(--gold)] tracking-wide">
+      Preview in new tab →
+    </p>
+  </a>
+
+  <!-- Dark Theme -->
+  <a href="/index-dark.html"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="block rounded-xl border border-[var(--color-border)] bg-[var(--color-card-bg)]
+            p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-200">
+
+    <h2 class="text-sm font-semibold tracking-[0.16em] uppercase text-[var(--color-muted)]">
+      Dark Theme
+    </h2>
+
+    <p class="mt-2 text-xl font-semibold text-[var(--color-title)]">
+      Cinematic Dark Theme
+    </p>
+
+    <p class="mt-2 text-sm text-[var(--color-muted)] leading-relaxed">
+      High-contrast black and gold layout for a more dramatic, boutique feel.
+      Perfect if you want a “luxury lounge” atmosphere.
+    </p>
+
+    <p class="mt-3 text-xs font-medium text-[var(--gold)] tracking-wide">
+      Preview in new tab →
+    </p>
+  </a>
+
+  <!-- 🌸 Warm Pink Theme (NEW CARD) -->
+  <a href="/index-warm-pink.html"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="block rounded-xl border border-[var(--color-border)] bg-[var(--color-card-bg)]
+            p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-200">
+
+    <h2 class="text-sm font-semibold tracking-[0.16em] uppercase text-[var(--color-muted)]">
+      Warm Pink Theme
+    </h2>
+
+    <p class="mt-2 text-xl font-semibold text-[var(--color-title)]">
+      Soft & Elegant Sakura Theme
+    </p>
+
+    <p class="mt-2 text-sm text-[var(--color-muted)] leading-relaxed">
+      A warm, inviting pink-inspired layout with subtle floral accents.
+      Perfect for salons wanting a softer, modern, boutique feel.
+    </p>
+
+    <p class="mt-3 text-xs font-medium text-[var(--gold)] tracking-wide">
+      Preview in new tab →
+    </p>
+  </a>
+
+</section>
+
+
+    <!-- Developer info -->
+    <section
+      class="mt-4"
+      style="padding-top: 0; padding-bottom: 0.75rem;"
+    >
+      <aside class="max-w-md mx-auto rounded-xl border border-[var(--color-border)] bg-[var(--color-card-bg)] p-4 md:p-5 text-sm shadow-sm">
+        <h2 class="text-xs font-semibold tracking-[0.2em] uppercase text-[var(--color-muted)] mb-2.5 text-center md:text-left">
           Developer Info
         </h2>
 
         <div class="space-y-1.5">
           <p><span class="font-medium">Name:</span> Hien Tran</p>
-          <p><span class="font-medium">Email:</span> hien.tran@example.com</p>
-          <p><span class="font-medium">Phone:</span> (000) 000-0000</p>
+          <p><span class="font-medium">Email:</span> hien.vu.tran2002@gmail.com</p>
+          <p>
+            <span class="font-medium">Phone:</span>
+            <a href="tel:18183839753" style="color: var(--color-body) !important; text-decoration: none;">
+              (818) 383-9753
+            </a>
+          </p>
         </div>
 
         <p class="mt-3 text-xs text-[var(--color-muted)] leading-relaxed">
           Feel free to contact me anytime if you have questions or need help choosing a style.
         </p>
       </aside>
-
     </section>
 
-    <!-- Theme options -->
-    <section class="mt-10 grid gap-5 md:grid-cols-2">
-
-      <!-- Light Theme -->
-      <a href="/index-light.html"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="block rounded-xl border border-[var(--color-border)] bg-[var(--color-card-bg)]
-                p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-200">
-
-        <h2 class="text-sm font-semibold tracking-[0.16em] uppercase text-[var(--color-muted)]">
-          Light Theme
-        </h2>
-
-        <p class="mt-2 text-xl font-semibold text-[var(--color-title)]">
-          Elegant Light Theme
-        </p>
-
-        <p class="mt-2 text-sm text-[var(--color-muted)] leading-relaxed">
-          Bright, airy layout with a warm cream background and soft gold accents.
-          Clean, welcoming, and easy to read for most guests.
-        </p>
-
-        <p class="mt-4 text-xs font-medium text-[var(--gold)] tracking-wide">
-          Preview in new tab →
-        </p>
-      </a>
-
-      <!-- Dark Theme -->
-      <a href="/index-dark.html"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="block rounded-xl border border-[var(--color-border)] bg-[var(--color-card-bg)]
-                p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-200">
-
-        <h2 class="text-sm font-semibold tracking-[0.16em] uppercase text-[var(--color-muted)]">
-          Dark Theme
-        </h2>
-
-        <p class="mt-2 text-xl font-semibold text-[var(--color-title)]">
-          Cinematic Dark Theme
-        </p>
-
-        <p class="mt-2 text-sm text-[var(--color-muted)] leading-relaxed">
-          High-contrast black and gold layout for a more dramatic, boutique feel.
-          Perfect if you want a “luxury lounge” atmosphere.
-        </p>
-
-        <p class="mt-4 text-xs font-medium text-[var(--gold)] tracking-wide">
-          Preview in new tab →
-        </p>
-      </a>
-
-    </section>
-
-    <!-- What to send back -->
-    <section class="mt-10 border-t border-[var(--color-border)] pt-5">
-      <h2 class="text-sm font-semibold tracking-[0.16em] uppercase text-[var(--color-muted)] mb-2.5">
+    <!-- After reviewing -->
+    <section
+      class="mt-4 border-t border-[var(--color-border)]"
+      style="padding-top: 0.75rem; padding-bottom: 0;"
+    >
+      <h2 class="text-sm font-semibold tracking-[0.16em] uppercase text-[var(--color-muted)] mb-2">
         After reviewing
       </h2>
 
@@ -131,7 +171,7 @@
       </p>
 
       <ul class="mt-2 text-sm text-[var(--color-body)] list-disc list-inside space-y-1">
-        <li>Your preferred theme (Light or Dark).</li>
+        <li>Your preferences.</li>
         <li>Any custom colors, tones, or adjustments you’d like.</li>
         <li>The final version will be tailored specifically for your business.</li>
       </ul>
@@ -140,7 +180,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="mt-10 py-6 text-center text-xs text-[var(--color-muted)] border-t border-[var(--color-border)] bg-[var(--color-card-bg)]">
+  <footer class="mt-4 py-4 text-center text-xs text-[var(--color-muted)] border-t border-[var(--color-border)] bg-[var(--color-card-bg)]">
     © 2025 Hien Tran. All rights reserved.
   </footer>
 
